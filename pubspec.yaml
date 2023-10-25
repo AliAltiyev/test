@@ -9,6 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  core:
+    path: ./core
+  data:  
+    path: ./data
+  auth: 
+    path: ./features./auth  
+
 
 dev_dependencies:
   flutter_test:

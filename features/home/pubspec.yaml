@@ -1,5 +1,5 @@
-name: data
-description: Application data layer.
+name: home
+description: Application home layer.
 version: 0.0.1
 publish_to: none
 
@@ -11,15 +11,15 @@ dependencies:
   flutter:
     sdk: flutter
   core:
-   path: ../core 
-  domain: 
-   path: ../domain 
-
+    path: ../../core
+  core_ui:
+    path: ../../core_ui
+  domain:
+    path: ../../domain  
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  json_serializable: ^6.7.1
-  build_runner: ^2.4.6
 
 flutter:

@@ -1,11 +1,15 @@
 library data;
 
 export 'package:core/core.dart';
-export 'package:data/data_source/remote/api_service.dart';
-export 'package:data/mapper/auth.dart';
+export 'package:data/data_source/locale/locale_storage.dart';
+export 'package:data/data_source/locale/locale_storage_impl.dart';
+export 'package:data/data_source/remote/config/interceptor.dart';
+export 'package:data/data_source/remote/news_api.dart';
+export 'package:data/data_source/remote/news_api_impl.dart';
+export 'package:data/di/di.dart';
+export 'package:data/mapper/article.dart';
 export 'package:data/mapper/base.dart';
-export 'package:data/model/auth.dart';
-export 'package:data/model/token.dart';
+export 'package:data/model/article.dart';
+export 'package:data/model/news.dart';
+export 'package:data/model/source.dart';
 export 'package:domain/domain.dart';
-export 'package:json_annotation/json_annotation.dart';
-export 'package:json_serializable/json_serializable.dart';

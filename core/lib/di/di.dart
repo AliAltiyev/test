@@ -4,9 +4,15 @@ import 'package:get_it/get_it.dart';
 final GetIt getIt = GetIt.instance;
 
 Future<void> initCore() async {
-  getIt.registerLazySingletonAsync<SharedPreferences>(
-    SharedPreferences.getInstance,
+  Future<SharedPreferences> getSharedPreferences() async {
+    return await SharedPreferences.getInstance();
+  }
+
+  getIt.registerLazySingleton<Logger>(
+    Logger.new,
   );
+
+  getIt.registerLazySingletonAsync<SharedPreferences>(getSharedPreferences);
 
   final Dio dio = Dio(
     BaseOptions(

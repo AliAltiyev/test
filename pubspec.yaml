@@ -13,8 +13,8 @@ dependencies:
     path: ./core
   data:  
     path: ./data
-  auth: 
-    path: ./features./auth  
+  home: 
+    path: ./features./home  
 
 
 dev_dependencies:

@@ -1,9 +1,11 @@
 import 'package:data/data.dart';
-import 'package:data/data_source/locale/locale_storage.dart';
-import 'package:data/data_source/locale/locale_storage_impl.dart';
-import 'package:data/data_source/remote/api_service_impl.dart';
+import 'package:data/repository_impl/repository_impl.dart';
 
 Future<void> initData() async {
+  await getIt.isReady<SharedPreferences>();
+
+  getIt.registerLazySingleton<DateFormatter>(() => DateFormatter());
+  getIt.registerLazySingleton<DioConfig>(() => DioConfig());
   getIt.registerLazySingleton<LocaleStorageImpl>(
     () => LocaleStorageImpl(sharedPreferences: getIt<SharedPreferences>()),
   );
@@ -11,17 +13,29 @@ Future<void> initData() async {
     () => LocaleStorageImpl(sharedPreferences: getIt<SharedPreferences>()),
   );
 
-  getIt.registerLazySingleton<ApiServiceImpl>(
-    () => ApiServiceImpl(
-      dio: getIt<Dio>(),
-      localeStorage: getIt<LocaleStorage>(),
+  getIt.registerLazySingleton<NewsApiImpl>(
+    () => NewsApiImpl(
+      dioConfig: getIt<DioConfig>(),
+      dateFormatter: getIt<DateFormatter>(),
     ),
   );
 
-  getIt.registerLazySingleton<ApiService>(
-    getIt,
+  getIt.registerLazySingleton<NewsApi>(
+    () => NewsApiImpl(
+      dioConfig: getIt<DioConfig>(),
+      dateFormatter: getIt<DateFormatter>(),
+    ),
   );
-  
-  
 
+  getIt.registerLazySingleton<Repository>(
+    () => RepositoryImpl(
+      api: getIt<NewsApi>(),
+    ),
+  );
+
+  getIt.registerLazySingleton<FetchFeaturedNewsUseCase>(
+    () => FetchFeaturedNewsUseCase(
+      authRepository: getIt<Repository>(),
+    ),
+  );
 }

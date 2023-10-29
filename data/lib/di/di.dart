@@ -27,15 +27,5 @@ Future<void> initData() async {
     ),
   );
 
-  getIt.registerLazySingleton<Repository>(
-    () => RepositoryImpl(
-      api: getIt<NewsApi>(),
-    ),
-  );
 
-  getIt.registerLazySingleton<FetchFeaturedNewsUseCase>(
-    () => FetchFeaturedNewsUseCase(
-      authRepository: getIt<Repository>(),
-    ),
-  );
 }

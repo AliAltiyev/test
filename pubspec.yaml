@@ -1,5 +1,5 @@
 name: codeunion
-description: A new Flutter project.
+description: Test application.
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,6 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  core:
+    path: ./core
+  data:  
+    path: ./data
+  home: 
+    path: ./features./home  
+
 
 dev_dependencies:
   flutter_test:

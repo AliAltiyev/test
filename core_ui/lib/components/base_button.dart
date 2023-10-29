@@ -10,7 +10,7 @@ class BaseButton extends StatelessWidget {
 
   final TextStyle? buttonTextStyle;
 
-  final bool? isDisabled;
+  final bool isDisabled;
 
   final double? height;
 
@@ -21,16 +21,17 @@ class BaseButton extends StatelessWidget {
   final Alignment? alignment;
 
   const BaseButton({
-    Key? key,
+ 
     required this.text,
     this.onTap,
     this.buttonStyle,
     this.buttonTextStyle,
-    this.isDisabled,
+    required this.isDisabled,
     this.height,
     this.width,
     this.margin,
     this.alignment,
+    Key? key,
   }) : super(
           key: key,
         );

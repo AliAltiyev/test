@@ -1,6 +1,5 @@
-import 'package:codeunion/application.dart';
-import 'package:flutter/material.dart';
-import 'package:home/home_bloc.dart';
+import 'package:data/di/di.dart';
+import 'package:home/order.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,12 +13,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: BlocProvider<HomeBloc>(
-        create: (BuildContext context) => HomeBloc(
-          fetchFeaturedNewsUseCase: getIt<FetchFeaturedNewsUseCase>(),
-        ),child: const HomeScreen(),
-      ),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: OrderScreen(),
     );
   }
 }

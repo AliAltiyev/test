@@ -23,8 +23,8 @@ final class NewsApiImpl implements NewsApi {
       final Response<dynamic> response = await _dioConfig.dio.get(
         ApiConstants.fetchEverything,
         queryParameters: <String, String>{
-          'from': '2023-10-22',
-          'to': '2023-10-22',
+          'from': '2023-10-25',
+          'to': '2023-10-25',
           'sortBy': 'popularity',
           'apiKey': ApiConstants.apiKey,
         },

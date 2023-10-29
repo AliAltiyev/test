@@ -9,8 +9,10 @@ class ArticleEntity {
   final String? urlToImage;
   final DateTime? publishedAt;
   final String? content;
+   bool? isRead;
 
-  ArticleEntity({
+  ArticleEntity( {
+    this.isRead,
     required this.source,
     required this.author,
     required this.title,

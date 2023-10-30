@@ -28,6 +28,8 @@ class _SenderDetailsFormState extends State<SenderDetailsForm> {
   final TextEditingController postCodeTextEditingController =
       TextEditingController();
 
+ 
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -84,7 +86,7 @@ class _SenderDetailsFormState extends State<SenderDetailsForm> {
             fit: BoxFit.none,
             ImagePaths.city,
             height: Dimensions.size_10,
-          ) ,
+          ),
         ),
         UserOrderTextField(
           textInputType: TextInputType.text,
@@ -98,7 +100,7 @@ class _SenderDetailsFormState extends State<SenderDetailsForm> {
             fit: BoxFit.none,
             ImagePaths.location,
             height: Dimensions.size_10,
-          ) ,
+          ),
         ),
         InkWell(
           onTap: () {
@@ -124,7 +126,6 @@ class _SenderDetailsFormState extends State<SenderDetailsForm> {
           hintText: widget.isRecipientAddress
               ? StringConstants.recipientPostCodeHintText
               : StringConstants.senderPostCodeHintText,
-          
         )
       ],
     );

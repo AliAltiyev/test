@@ -4,6 +4,7 @@ class CustomElevatedButton extends BaseButton {
   final BoxDecoration? decoration;
   final Widget? leftIcon;
   final Widget? rightIcon;
+  
 
   const CustomElevatedButton({
     this.decoration,
@@ -35,7 +36,6 @@ class CustomElevatedButton extends BaseButton {
   Widget build(BuildContext context) {
     return alignment != null
         ? Align(
-
             alignment: alignment ?? Alignment.center,
             child: buildElevatedButtonWidget,
           )
@@ -43,7 +43,6 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-    
         height: height ?? Dimensions.size_44,
         width: width ?? double.maxFinite,
         margin: margin,
@@ -66,6 +65,7 @@ class CustomElevatedButton extends BaseButton {
                 ApplicationColors.transparient,
               )),
           onPressed: onTap,
+          
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

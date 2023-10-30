@@ -28,6 +28,7 @@ class AppTextField extends StatelessWidget {
     this.validator,
     this.fillColor,
     this.prefix,
+    
     this.hintText,
     this.keyboardType,
     this.hintStyle,

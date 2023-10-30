@@ -3,16 +3,19 @@ import 'package:home/order.dart';
 class UserOrderTextField extends StatelessWidget {
   final TextEditingController textEditingController;
   final String? title;
+    final String? Function(String?)? validator;
   final Widget prefixIcon;
   final String hintText;
   final TextInputType? textInputType;
+
   const UserOrderTextField({
     required this.textEditingController,
     required this.prefixIcon,
     this.title,
+    this.validator,
     required this.hintText,
     this.textInputType,
-    super.key,
+    super.key, 
   });
 
   @override
@@ -34,6 +37,7 @@ class UserOrderTextField extends StatelessWidget {
           AppTextField(
             controller: textEditingController,
             hintText: hintText,
+            validator: validator,
             keyboardType: textInputType,
             prefix: prefixIcon,
           ),

@@ -3,10 +3,13 @@ import 'package:home/order.dart';
 class SenderDetailsBody extends StatelessWidget {
   final bool isRecipientAddress;
   final Widget form;
+  final GlobalKey<FormState> formKey;
 
   const SenderDetailsBody({
+    
     required this.isRecipientAddress,
     required this.form,
+    required this.formKey,
     super.key,
   });
 
@@ -14,7 +17,8 @@ class SenderDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
 
-    return SingleChildScrollView(
+    return Form(
+      key: formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.max,

@@ -9,6 +9,7 @@ final class StringConstants {
   static const String selectAddress = 'Select address';
   static const String addAddressLine = 'Add address line +';
   static const String addAddressFirst = 'Address line 1*';
+  static const String nextStep = 'Next step';
 
   //TextField title text
   static const String fullName = 'Full name*';

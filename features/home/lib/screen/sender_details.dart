@@ -1,15 +1,13 @@
 import 'package:home/order.dart';
 
-class SenderDetailsScreen extends StatefulWidget {
-  const SenderDetailsScreen({
+class SenderDetailsScreen extends StatelessWidget {
+  SenderDetailsScreen({
     super.key,
   });
 
-  @override
-  State<SenderDetailsScreen> createState() => _SenderDetailsScreenState();
-}
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-class _SenderDetailsScreenState extends State<SenderDetailsScreen> {
+
   @override
   Widget build(BuildContext context) {
     return GradientBackground(
@@ -28,17 +26,43 @@ class _SenderDetailsScreenState extends State<SenderDetailsScreen> {
           ),
         ),
         body: ListView(
-          children: const <Widget>[
+          children: <Widget>[
+            // Here i ve got error when I scroll list view,cause i 
+            // ve used same form key for two different widgets
             SenderDetailsBody(
-              form: SenderDetailsForm(
+              key: UniqueKey(),
+              formKey: formKey,
+              form: const SenderDetailsForm(
                 isRecipientAddress: false,
               ),
               isRecipientAddress: false,
             ),
             SenderDetailsBody(
+              key: UniqueKey(),
+              formKey: formKey,
               isRecipientAddress: true,
-              form: SenderDetailsForm(isRecipientAddress: true,),
+              form: const SenderDetailsForm(
+                isRecipientAddress: true,
+              ),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: Dimensions.size_32,
+                horizontal: Dimensions.size_16,
+              ),
+              child: CustomElevatedButton(
+                onTap: () {
+                  if (formKey.currentState?.validate() ?? false) {
+                    //?Maybe a bit later will add this feature
+
+                    // context.read<OrderBloc>().add(SaveSenderDetailsEvent(
+                    // ));
+                  }
+                },
+                isDisabled: true,
+                text: StringConstants.nextStep,
+              ),
+            )
           ],
         ),
       ),

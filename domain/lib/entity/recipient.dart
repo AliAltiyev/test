@@ -1,6 +1,6 @@
 import 'package:domain/domain.dart';
 
-final class Sender extends Equatable {
+final class Recipient extends Equatable {
   final String username;
   final String email;
   final String phoneNumber;
@@ -9,7 +9,7 @@ final class Sender extends Equatable {
   final String address;
   final String postCode;
 
-  const Sender({
+  const Recipient({
     required this.username,
     required this.email,
     required this.phoneNumber,

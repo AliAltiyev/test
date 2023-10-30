@@ -1,4 +1,4 @@
-name: codeunion
+name: test
 description: Test application.
 publish_to: 'none'
 version: 0.1.0
@@ -13,8 +13,11 @@ dependencies:
     path: ./core
   data:  
     path: ./data
+  navigation:
+    path: ./navigation  
   home: 
-    path: ./features./home  
+    path: ./features/home  
+
 
 
 dev_dependencies:

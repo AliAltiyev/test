@@ -1,0 +1,4 @@
+enum FirebaseCollection{
+  senders,
+  recipients,
+}

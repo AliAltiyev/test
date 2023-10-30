@@ -1,21 +1,18 @@
+import 'package:core/di/firebase_options.dart';
 import 'package:data/di/di.dart';
 import 'package:home/order.dart';
+import 'package:test/application.dart';
+import 'package:test/export.dart';
 
 Future<void> main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
+       
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await initCore();
   await initData();
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: OrderScreen(),
-    );
-  }
+  await initNavigation();
+  runApp(Application());
 }

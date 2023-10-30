@@ -2,10 +2,9 @@ import 'package:core_ui/core_ui.dart';
 
 class CustomElevatedButton extends BaseButton {
   final BoxDecoration? decoration;
-
   final Widget? leftIcon;
-
   final Widget? rightIcon;
+  
 
   const CustomElevatedButton({
     this.decoration,
@@ -16,7 +15,7 @@ class CustomElevatedButton extends BaseButton {
     ButtonStyle? buttonStyle,
     Alignment? alignment,
     TextStyle? buttonTextStyle,
-    bool? isDisabled,
+    required bool isDisabled,
     double? height,
     double? width,
     required String text,
@@ -44,13 +43,29 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-        height: height ?? Dimensions.size_50,
+        height: height ?? Dimensions.size_44,
         width: width ?? double.maxFinite,
         margin: margin,
-        decoration: decoration,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            Dimensions.size_32,
+          ),
+          color: !isDisabled
+              ? ApplicationColors.black.withOpacity(
+                  Dimensions.size_0_1,
+                )
+              : ApplicationColors.primaryColor,
+        ),
         child: ElevatedButton(
-          style: buttonStyle,
+          style: const ButtonStyle(
+              elevation: MaterialStatePropertyAll<double?>(
+                Dimensions.size_0,
+              ),
+              backgroundColor: MaterialStatePropertyAll<Color?>(
+                ApplicationColors.transparient,
+              )),
           onPressed: onTap,
+          
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,7 +73,12 @@ class CustomElevatedButton extends BaseButton {
               leftIcon ?? const SizedBox.shrink(),
               Text(
                 text,
-                style: buttonTextStyle ?? AppFonts.normal16,
+                style: buttonTextStyle ??
+                    AppFonts.normal16.apply(
+                      color: !isDisabled
+                          ? ApplicationColors.disabledColor
+                          : ApplicationColors.white,
+                    ),
               ),
               rightIcon ?? const SizedBox.shrink(),
             ],

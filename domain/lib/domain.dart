@@ -1,8 +1,7 @@
 library domain;
 
 export 'package:core/core.dart';
-export 'package:domain/entity/article.dart';
-export 'package:domain/entity/news.dart';
-export 'package:domain/entity/source.dart';
-export 'package:domain/repository/repository.dart';
-export 'package:domain/usecase/fetch_featured_news_usecase.dart';
+export 'package:domain/entity/recipient.dart';
+export 'package:domain/entity/sender.dart';
+export 'package:domain/repository/order.dart';
+export 'package:domain/usecase/save_sender_details.dart';

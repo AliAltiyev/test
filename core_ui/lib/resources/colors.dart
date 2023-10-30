@@ -7,6 +7,8 @@ final class ApplicationColors {
   static const Color white = Colors.white;
 
   static const Color disabledColor = Color(0x61000000);
+  static const Color cardColor = Color(0xff172027);
+
   static const Color secondaryHeaderColor = Color(0xffffe5e5);
   static const Color dialogBackgroundColor = Color(0xffffffff);
   static const Color primaryColor = Color(0xffEA560D);

@@ -10,7 +10,7 @@ const int _duration = 1000;
     CustomRoute(
       maintainState: true,
       name: 'sender_details',
-      page: SenderDetails,
+      page: SenderDetailsScreen,
       transitionsBuilder: TransitionsBuilders.fadeIn,
       durationInMilliseconds: _duration,
       path: '/',

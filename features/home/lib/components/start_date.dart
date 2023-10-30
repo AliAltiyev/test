@@ -3,8 +3,8 @@ class StartDate extends StatelessWidget {
   final Size size;
 
   const StartDate({
-    required this.size,
     super.key,
+    required this.size,
   });
 
   @override
@@ -23,7 +23,7 @@ class StartDate extends StatelessWidget {
             child: Title(
               color: ApplicationColors.black,
               child: Text(
-                'Start date',
+                StringConstants.startDate,
                 style: AppFonts.bold14,
               ),
             ),
@@ -60,13 +60,13 @@ class StartDate extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                           horizontal: Dimensions.size_16,
                         ),
-                        child: Icon(
-                          Icons.calendar_month_outlined,
-                          color: ApplicationColors.borderColor,
-                        ),
+                          child: AppIcons.calendar
                       ),
                       Text(
-                        DateTime.now().toString().substring(0, 10),
+                        DateTime.now().toString().substring(
+                              Dimensions.size_0.toInt(),
+                              Dimensions.size_10.toInt(),
+                            ),
                       ),
                     ],
                   ),

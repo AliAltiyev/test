@@ -2,14 +2,14 @@ import 'package:home/order.dart';
 
 class UserOrderTextField extends StatelessWidget {
   final TextEditingController textEditingController;
-  final String title;
+  final String? title;
   final Widget prefixIcon;
   final String hintText;
   final TextInputType? textInputType;
   const UserOrderTextField({
     required this.textEditingController,
     required this.prefixIcon,
-    required this.title,
+    this.title,
     required this.hintText,
     this.textInputType,
     super.key,
@@ -27,7 +27,7 @@ class UserOrderTextField extends StatelessWidget {
           Title(
             color: ApplicationColors.black,
             child: Text(
-              title,
+              title ?? '',
               style: AppFonts.bold14,
             ),
           ),

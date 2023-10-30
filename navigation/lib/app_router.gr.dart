@@ -20,7 +20,7 @@ class _$AppRouter extends RootStackRouter {
     Sender_details.name: (routeData) {
       return CustomPage<dynamic>(
         routeData: routeData,
-        child: const SenderDetails(),
+        child: const SenderDetailsScreen(),
         transitionsBuilder: TransitionsBuilders.fadeIn,
         durationInMilliseconds: 1000,
         opaque: true,
@@ -53,7 +53,7 @@ class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
-/// [SenderDetails]
+/// [SenderDetailsScreen]
 class Sender_details extends PageRouteInfo<void> {
   const Sender_details()
       : super(

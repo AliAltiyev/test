@@ -1,13 +1,13 @@
 import 'package:home/order.dart';
 
 class UserOrderTextField extends StatelessWidget {
-  final TextEditingController fullNameTextEditingController;
+  final TextEditingController textEditingController;
   final String title;
   final Widget prefixIcon;
   final String hintText;
   final TextInputType? textInputType;
   const UserOrderTextField({
-    required this.fullNameTextEditingController,
+    required this.textEditingController,
     required this.prefixIcon,
     required this.title,
     required this.hintText,
@@ -32,7 +32,7 @@ class UserOrderTextField extends StatelessWidget {
             ),
           ),
           AppTextField(
-            controller: fullNameTextEditingController,
+            controller: textEditingController,
             hintText: hintText,
             keyboardType: textInputType,
             prefix: prefixIcon,

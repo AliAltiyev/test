@@ -5,8 +5,10 @@
 
 <p id="description">This is only test project and nothing more.</p>
 
-  
-  
+  ![Дизайн без названия](https://github.com/AliAltiyev/test/assets/100046123/1aa68ad7-268a-44f8-9051-1cf085b615bc)
+
+  ![Дизайн без названия (1)](https://github.com/AliAltiyev/test/assets/100046123/36a4c523-ce25-4800-a59f-7a2e4a1a5a87)
+
 <h2>🧐 Gitflow </h2>
 
 Branches: 

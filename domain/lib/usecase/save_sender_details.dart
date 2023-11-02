@@ -1,6 +1,6 @@
 import 'package:domain/domain.dart';
 
-final class SaveSenderDetailsUseCase {
+ class SaveSenderDetailsUseCase {
   final Repository _repository;
 
   SaveSenderDetailsUseCase({

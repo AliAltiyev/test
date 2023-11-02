@@ -10,6 +10,9 @@ final class StringConstants {
   static const String addAddressLine = 'Add address line +';
   static const String addAddressFirst = 'Address line 1*';
   static const String nextStep = 'Next step';
+  static const String next = 'Next';
+  static const String search = 'Search';
+
 
   //TextField title text
   static const String fullName = 'Full name*';
@@ -34,4 +37,12 @@ final class StringConstants {
   static const String recipientCityHintText = 'Naple';
   static const String recipientAddressLineHintText = 'Via Toledo 256';
   static const String recipientPostCodeHintText = '80100';
+
+  //Select Address screen
+  static const String senderUserName = 'Danilev Egor';
+  static const String senderAddress = 'Belarus Minsk';
+  static const String recipientUserName = 'Ko Yuri';
+  static const String recipientUserAddress =
+      'Italy, Naple, Via Toledo 256, 220069';
+
 }

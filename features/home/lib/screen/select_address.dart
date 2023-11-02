@@ -5,9 +5,13 @@ class SelectAddressScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController searchTextEditingController =
+    final TextEditingController senderSearchTextEditingController =
         TextEditingController();
 
+    final TextEditingController recipientSearchTextEditingController =
+        TextEditingController();
+
+   
     return GradientBackground(
       image: ImagePaths.primaryBackground,
       child: Scaffold(
@@ -16,7 +20,8 @@ class SelectAddressScreen extends StatelessWidget {
               onTap: () {
                 return context.read<OrderBloc>().add(OnPopEvent());
               },
-              child: AppIcons.chevronLeft),
+            child: AppIcons.chevronLeft,
+          ),
           centerTitle: true,
           backgroundColor: ApplicationColors.transparient,
           elevation: Dimensions.size_0,
@@ -32,28 +37,36 @@ class SelectAddressScreen extends StatelessWidget {
             children: <Widget>[
               const OrderTitle(),
               SelectAddressBody(
-                searchTextEditingController: searchTextEditingController,
+                  searchTextEditingController:
+                      senderSearchTextEditingController,
                 title: StringConstants.senderDetails,
                 userAddressCard: const UserAddressCard(
-                  username: 'Denilev Egor',
-                  address: 'Belarus Minsk',
+                    username: StringConstants.senderUserName,
+                    address: StringConstants.senderAddress,
                 ),
               ),
               SelectAddressBody(
-                searchTextEditingController: searchTextEditingController,
-                title: 'Recipient address',
+                  searchTextEditingController:
+                      recipientSearchTextEditingController,
+                  title: StringConstants.recipientAddress,
                 userAddressCard: const UserAddressCard(
-                  username: 'Ko Yuri',
-                  address: 'Italy, Naple, Via Toledo 256, 220069',
+                    username: StringConstants.recipientUserName,
+                    address: StringConstants.recipientUserAddress,
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.all(16),
-                child: CustomElevatedButton(isDisabled: true, text: 'Next'),
+                  padding: EdgeInsets.all(
+                    Dimensions.size_16,
+                  ),
+                  child: CustomElevatedButton(
+                    isDisabled: true,
+                    text: StringConstants.next,
+                  ),
               ),
             ],
           ),
-        ]),
+          ],
+        ),
       ),
     );
   }
@@ -120,7 +133,9 @@ class SelectAddressBody extends StatelessWidget {
                   ),
                   const Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(right: 10),
+                      padding: EdgeInsets.only(
+                        right: Dimensions.size_10,
+                      ),
                       child: CustomElevatedButton(
                         isDisabled: true,
                         text: StringConstants.selectAddress,
@@ -133,7 +148,7 @@ class SelectAddressBody extends StatelessWidget {
             UserOrderTextField(
               textEditingController: searchTextEditingController,
               prefixIcon:  AppIcons.search,
-              hintText: 'Search',
+              hintText: StringConstants.search,
             ),
             userAddressCard,
           ],
